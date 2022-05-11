@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +27,7 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/',[HomeController::class,'home']);
 Route::get('/contact',[HomeController::class,'contact']);
+Route::get('/categories',[CategoryController::class,'list'])->name('category.list');
+Route::get('/category/create',[CategoryController::class,'create'])->name('category.create');
+
+Route::get('/products',[ProductController::class,'list'])->name('product.list');
