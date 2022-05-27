@@ -20,6 +20,11 @@ class CategoryController extends Controller
      return view('backend.layouts.category.create');
 
     }
+    public function store(Request $request)
+    {
+     dd($request->all());
+     
+    }
     
 
 }
