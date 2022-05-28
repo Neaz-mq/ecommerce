@@ -5,9 +5,11 @@
 <h2> Create Category</h2>
 
 <form action="{{route('category.store')}}" method="post">
+  @csrf
+
   <div class="form-group">
     <label for="name"> Enter category name</label>
-      <input type="text" class="form-control" id="name" placeholder="Enter category name">
+      <input type="text" name="category_name" class="form-control" id="name" placeholder="Enter category name">
     
   </div>
   <div class="form-group">

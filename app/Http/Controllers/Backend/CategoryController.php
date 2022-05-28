@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class CategoryController extends Controller
 {
@@ -22,7 +23,21 @@ class CategoryController extends Controller
     }
     public function store(Request $request)
     {
-     dd($request->all());
+
+      // left - coloumn name  || right - input field name of form
+    // dd($request->all());
+
+    Category::create([
+
+      'name'=>$request->category_name,
+      'details'=>$request->description
+
+
+    ]
+
+    );
+
+    return redirect()->back();
      
     }
     
